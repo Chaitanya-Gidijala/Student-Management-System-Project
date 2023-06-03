@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/common_file :: head"></head>
+
+<body>
+
+<!-- Navigation Bar -->
+<nav th:replace="fragments/common_file :: navigation"></nav>
+
+<!-- side navigation bar -->
+<div th:replace="fragments/common_file :: sidenav"></div>
+
+<!-- Side bar -> Toggle button -->
+<div th:replace="fragments/common_file :: main-menu"></div>
+
+<!-- Main body -->
+<div class="container" style="margin-top: 50px;">
+	<div class="homerow row" id="homerowid">
+	    <div class="stdcount col-sm-5">
+	      Number of students
+	    </div>
+	    <div class="col-1">
+               <!--extra div-->
+           </div>
+	    <div class="stdcount col-sm-5"  id="subject">
+	      Number of student Results
+	    </div>
+  	</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+

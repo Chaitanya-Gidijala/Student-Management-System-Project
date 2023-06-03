@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/common_file :: head"></head>
+
+<body>
+
+<!-- Navigation bar -->
+<nav th:replace="fragments/common_file :: navigation"></nav>
+
+<!-- side navigation bar -->
+<div th:replace="fragments/common_file :: sidenav"></div>
+
+<!-- Side bar -> Toggle button -->
+<div th:replace="fragments/common_file :: main-menu"></div>
+
+<!-- Main Body -->
+<div class = "container">
+	<div class = "row">
+		<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card"
+		style="background-color: lavender;">
+		<h1 class = "text-center"> Update Student </h1>
+		<div class = "card-body">
+			<form th:action="@{/results/{id} (id=${result.id})}" th:object = "${result}" method="POST">
+				<div class ="form-group">
+					<label> Student Hall Ticket Number </label>
+					<input
+					type = "number"
+					name = "hallTicketNo"
+					th:field = "*{hallTicketNo}"
+					class = "form-control"
+					placeholder="Enter Student hall Ticket Number" 
+					/>
+				</div>
+				
+				<div class ="form-group">
+					<label> Student Full Name </label>
+					<input
+					type = "text"
+					name = "fullName"
+					th:field = "*{fullName}"
+					class = "form-control"
+					placeholder="Enter Student full Name" 
+					/>
+				</div>
+				
+				<div class ="form-group">
+					<label> Student Marks </label>
+					<input
+					type = "number"
+					name = "marks"
+					th:field = "*{marks}"
+					class = "form-control"
+					placeholder="Enter Student Marks" 
+					/>
+				</div>
+				
+				<span class = "box-footer" id="submit">
+					<button id="button" type="submit" class = "btn btn-primary">
+						Submit
+					</button>
+				</span>
+				<span class = "box-footer">
+					<a type="submit" th:href="@{/students}" class = "btn btn-danger" style="float:right; color: white;">
+							Cancle
+						</a>
+					</span>
+				</form>
+			
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
